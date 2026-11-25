@@ -1,10 +1,19 @@
 # btm-pathfinding
 
-Better pathfinding for Byte Tactics as an optional mod: a sliced, budgeted,
-deterministic A* service with a first pass, terrain regions, relaxed goals,
-provisional straight routes, drift tolerance, stand-off points and pad
-clearing. MIT; implemented clean-room from the behavioural spec in
-[`SPEC.md`](SPEC.md). Std only, no dependencies, no `unsafe`.
+Better pathfinding for Byte Tactics ([ozgb/btm](https://github.com/ozgb/btm)), as an **optional mod**. The default engine stays bit-identical to 3.1c. What this mod changes:
+
+- a long route is searched over several ticks instead of being cut off;
+- units start moving along the straight line while the route is worked out;
+- unreachable goals are answered at once, from connected regions of the map;
+- a goal on an occupied cell is moved to the nearest cell a unit can stand on;
+- waypoints have a wider tolerance, and a goal that drifts a little keeps its route;
+- attackers in a group each get their own stand-off point;
+- an unreachable target ends at the closest point instead of repathing forever;
+- units parked on a factory pad are told to move.
+
+## Provenance
+
+This is a clean-room implementation, under MIT. Its behaviour comes from a written spec (`SPEC.md`) of the changes RWE-B4 (GPLv3) made to pathfinding. A separate reviewer checked the spec for leakage before anyone implemented it. The code was written only from the spec, by someone who never read RWE's source.
 
 ## Using it
 
