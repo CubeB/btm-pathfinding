@@ -13,11 +13,14 @@ pub mod cost;
 pub mod error;
 pub mod firstpass;
 pub mod geom;
+pub mod nav;
+pub mod pad;
 mod probe;
 pub mod region;
 pub mod route;
 pub mod search;
 pub mod service;
+pub mod standoff;
 pub mod terrain;
 pub mod world;
 
@@ -25,6 +28,7 @@ pub use classes::ClassTable;
 pub use cost::Cost;
 pub use error::Error;
 pub use geom::{Cell, CellRect, Footprint, WorldPos, CELL, UNIT};
+pub use nav::{Nav, NavConfig};
 pub use route::{Route, Waypoint};
 pub use search::{Scratch, Search, SearchGoal, SearchOutcome, SearchSpec, SearchStatus};
 pub use service::{
