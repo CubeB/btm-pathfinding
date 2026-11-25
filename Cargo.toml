@@ -1,0 +1,17 @@
+[package]
+name = "btm-pathfinding"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Better pathfinding for Byte Tactics as an optional mod, clean-room from a behavioural spec."
+repository = "https://github.com/CubeB/btm-pathfinding"
+
+[dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
